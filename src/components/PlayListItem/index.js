@@ -1,4 +1,4 @@
-import {MdDeleteOutline} from 'react-icons/md'
+import {MdDelete} from 'react-icons/md'
 
 import './index.css'
 
@@ -15,14 +15,19 @@ const ListItem = props => {
       <div className="track-container">
         <img src={imageUrl} alt="track" className="track-img" />
         <div>
-          <h1 className="song-name">{name}</h1>
+          <p className="song-name">{name}</p>
           <p className="genre">{genre}</p>
         </div>
       </div>
       <div className="delete-container">
         <p className="duration">{duration}</p>
-        <button type="button" className="delete-btn" onClick={onDeleteTrack}>
-          <MdDeleteOutline className="delete-icon" />
+        <button
+          type="button"
+          className="delete-btn"
+          onClick={onDeleteTrack}
+          data-testid="delete"
+        >
+          <MdDelete className="delete-icon" />
         </button>
       </div>
     </li>
